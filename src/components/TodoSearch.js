@@ -1,6 +1,12 @@
+import React from 'react';
+import './../css/TodoSearch.css';
+
 function TodoSearch(){
     return(
-        <h3> Todo Search </h3>
+        <React.Fragment>
+            <input className="findTodo" placeholder="Buscar TODO"/>
+        </React.Fragment>
+        
     )
 }
 

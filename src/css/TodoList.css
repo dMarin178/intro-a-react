@@ -1,0 +1,7 @@
+.lista-de-todos {
+    list-style-position: inside;
+}
+
+.lista-de-todos ::marker {
+    color: #0C589C;
+}
