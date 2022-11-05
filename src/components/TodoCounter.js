@@ -1,4 +1,4 @@
-function TodoCounter() {
+function TodoCounter( {total, completed}) {
 
     /* 
     Los estilos en react se entregan como un objeto
@@ -15,7 +15,7 @@ function TodoCounter() {
     }
 
     return (
-        <h1 style={estilos}> Has completado 2 de 3 TODOs</h1>
+        <h1 style={estilos}> Has completado {completed} de {total} TODOs</h1>
 
         /* 
         OJO
