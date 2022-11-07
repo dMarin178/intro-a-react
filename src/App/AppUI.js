@@ -1,39 +1,35 @@
 import React from 'react';
+import { useContext } from 'react';
+import { TodoContext } from './../Context/TodoContext'
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoItem } from '../components/TodoItem';
 import { TodoList } from '../components/TodoList';
 import { TodoSearch } from '../components/TodoSearch';
 import { CreateTodoButton } from '../components/CreateTodoButton';
+import { Modal } from '../components/Modal';
 
-function AppUI({
-    loading,
-    error,
-    totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-}) {
-    
+function AppUI() {
+    const {
+        error,
+        loading,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+    } = useContext(TodoContext);
+
     return (
         <React.Fragment>
             <header>
-                <TodoCounter
-                    total={totalTodos}
-                    completed={completedTodos}
-                />
+                <TodoCounter />
             </header>
             <fieldset>
-                <TodoSearch
-                    searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                />
+                <TodoSearch />
                 <TodoList>
-                    { error && <p> Error </p>}
-                    { loading && <p> Cargando...</p>}
-                    { (!loading && !searchedTodos.length) && <>!Crea tu primer todo</>}
+                    {error && <p> Error </p>}
+                    {loading && <p> Cargando...</p>}
+                    {(!loading && !searchedTodos.length) && <>!Crea tu primer todo</>}
                     {
                         searchedTodos.map(todo => (
                             /* 
@@ -50,7 +46,15 @@ function AppUI({
                         ))
                     }
                 </TodoList>
-                <CreateTodoButton />
+
+                { !!openModal && (
+                    <Modal>
+                    </Modal>
+                )}
+
+                <CreateTodoButton 
+                    setOpenModal={setOpenModal}
+                />
             </fieldset>
         </React.Fragment>
     )

@@ -1,5 +1,9 @@
-function TodoCounter( {total, completed}) {
+import {useContext} from 'react';
+import {TodoContext} from './../Context/TodoContext.js';
 
+function TodoCounter() {
+
+    const { totalTodos, completedTodos} = useContext(TodoContext);
     /* 
     Los estilos en react se entregan como un objeto
     a la etiqueta HTML.
@@ -15,7 +19,7 @@ function TodoCounter( {total, completed}) {
     }
 
     return (
-        <h1 style={estilos}> Has completado {completed} de {total} TODOs</h1>
+        <h1 style={estilos}> Has completado {completedTodos} de {totalTodos} TODOs</h1>
 
         /* 
         OJO

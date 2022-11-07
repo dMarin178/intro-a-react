@@ -1,9 +1,9 @@
 import './../css/CreateTodoButton.css';
 
-function CreateTodoButton() {
+function CreateTodoButton( {setOpenModal}) {
 
-  const onClickCreateTodoButton = () => {
-    alert('Abriendo un modal')
+  const onClickButton = () => {
+    setOpenModal(true);
   }
 
   return (
@@ -13,7 +13,7 @@ function CreateTodoButton() {
       En el onclcick debemos enviar una variable (funcion) 
       Lo envolvemos en una funcion para que no se ejecute automaticamente
       */
-      onClick={ onClickCreateTodoButton }
+      onClick={ onClickButton }
     >
       + Crear Todo
     </button>)
