@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/intro-a-reat/static/css/main.9233437a.css",
+    "main.js": "/intro-a-reat/static/js/main.b517c504.js",
+    "index.html": "/intro-a-reat/index.html",
+    "main.9233437a.css.map": "/intro-a-reat/static/css/main.9233437a.css.map",
+    "main.b517c504.js.map": "/intro-a-reat/static/js/main.b517c504.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9233437a.css",
+    "static/js/main.b517c504.js"
+  ]
+}
